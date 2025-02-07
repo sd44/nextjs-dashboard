@@ -7,7 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${lusitana.className}  text-xl text-gray-800 md:text-3xl md:leading-normal`}>{children}</body>
     </html>
   );
 }
