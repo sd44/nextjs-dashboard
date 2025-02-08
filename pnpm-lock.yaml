@@ -55,7 +55,7 @@ importers:
         version: 3.24.1
     devDependencies:
       '@types/bcrypt':
-        specifier: ^5.0.2
+        specifier: '*'
         version: 5.0.2
       '@types/node':
         specifier: 22.10.7
