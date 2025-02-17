@@ -9,7 +9,7 @@ export const lusitana = Lusitana({
 
 export const noto_sans_sc = Noto_Sans_SC({
     weight: ['400', '700'], // 指定需要的权重
-    subsets: ["chinese-simplified"],
+    subsets: ["latin"],
     display: 'swap' // <-- here
 });
 

@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-Hans">
+    <html>
       <body
         className={`${lusitana.className} ${noto_sans_sc.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
       >
