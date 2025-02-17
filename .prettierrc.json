@@ -1,6 +1,8 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./app/ui/global.css",
   "tailwindConfig": "./tailwind.config.js",
+  "tailwindFunctions": ["clsx"],
   "$schema": "https://json.schemastore.org/prettierrc",
   "semi": true,
   "singleQuote": true,

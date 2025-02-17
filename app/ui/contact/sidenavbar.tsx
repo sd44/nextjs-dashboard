@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
 import {
@@ -27,7 +29,7 @@ import {
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
+  { name: 'Dashboard', href: '/contact', icon: HomeIcon, current: true },
   { name: 'Team', href: '#', icon: UsersIcon, current: false },
   { name: 'Projects', href: '#', icon: FolderIcon, current: false },
   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
@@ -50,6 +52,9 @@ function classNames(...classes) {
 
 export default function Example({ children }: { children: ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  /* TODO: 参考Nextjs Dashboard。但还未确定我的tailwindcss模板是否已支持这种状态
+  操作。 */
+  const pathname = usePathname();
 
   return (
     <>
@@ -100,7 +105,7 @@ export default function Example({ children }: { children: ReactNode }) {
                       <ul role="list" className="-mx-2 space-y-1">
                         {navigation.map((item) => (
                           <li key={item.name}>
-                            <a
+                            <Link
                               href={item.href}
                               className={classNames(
                                 item.current
@@ -118,7 +123,7 @@ export default function Example({ children }: { children: ReactNode }) {
                                 )}
                               />
                               {item.name}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -128,7 +133,7 @@ export default function Example({ children }: { children: ReactNode }) {
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
                         {teams.map((team) => (
                           <li key={team.name}>
-                            <a
+                            <Link
                               href={team.href}
                               className={classNames(
                                 team.current
@@ -140,13 +145,13 @@ export default function Example({ children }: { children: ReactNode }) {
                                 {team.initial}
                               </span>
                               <span className="truncate">{team.name}</span>
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
                     </li>
                     <li className="mt-auto">
-                      <a
+                      <Link
                         href="#"
                         className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-indigo-200 hover:bg-indigo-700 hover:text-white">
                         <Cog6ToothIcon
@@ -154,7 +159,7 @@ export default function Example({ children }: { children: ReactNode }) {
                           className="size-6 shrink-0 text-indigo-200 group-hover:text-white"
                         />
                         Settings
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -183,7 +188,7 @@ export default function Example({ children }: { children: ReactNode }) {
                   <ul role="list" className="-mx-2 space-y-1">
                     {navigation.map((item) => (
                       <li key={item.name}>
-                        <a
+                        <Link
                           href={item.href}
                           className={classNames(
                             item.current
@@ -201,7 +206,7 @@ export default function Example({ children }: { children: ReactNode }) {
                             )}
                           />
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -211,7 +216,7 @@ export default function Example({ children }: { children: ReactNode }) {
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
                       <li key={team.name}>
-                        <a
+                        <Link
                           href={team.href}
                           className={classNames(
                             team.current
@@ -223,13 +228,13 @@ export default function Example({ children }: { children: ReactNode }) {
                             {team.initial}
                           </span>
                           <span className="truncate">{team.name}</span>
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
                 <li className="mt-auto">
-                  <a
+                  <Link
                     href="#"
                     className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-indigo-200 hover:bg-indigo-700 hover:text-white">
                     <Cog6ToothIcon
@@ -237,7 +242,7 @@ export default function Example({ children }: { children: ReactNode }) {
                       className="size-6 shrink-0 text-indigo-200 group-hover:text-white"
                     />
                     Settings
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -306,11 +311,11 @@ export default function Example({ children }: { children: ReactNode }) {
                     className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 ring-1 shadow-lg ring-gray-900/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
                     {userNavigation.map((item) => (
                       <MenuItem key={item.name}>
-                        <a
+                        <Link
                           href={item.href}
                           className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden">
                           {item.name}
-                        </a>
+                        </Link>
                       </MenuItem>
                     ))}
                   </MenuItems>
