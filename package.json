@@ -1,37 +1,39 @@
 {
-    "private": true,
-    "scripts": {
-        "build": "next build",
-        "dev": "next dev --turbopack",
-        "start": "next start",
-        "seed": "node -r dotenv/config ./scripts/seed.js"
-    },
-    "dependencies": {
-        "@headlessui/react": "^2.2.0",
-        "@heroicons/react": "^2.2.0",
-        "@tailwindcss/postcss": "^4.0.6",
-        "bcryptjs": "^3.0.0",
-        "clsx": "^2.1.1",
-        "glob": "^11.0.1",
-        "next": "15.2.0-canary.63",
-        "next-auth": "5.0.0-beta.25",
-        "postcss": "8.5.2",
-        "postgres": "^3.4.5",
-        "react": "latest",
-        "react-dom": "latest",
-        "tailwindcss": "4.0.6",
-        "typescript": "5.7.3",
-        "use-debounce": "^10.0.4",
-        "zod": "^3.24.2"
-    },
-    "devDependencies": {
-        "@eslint/eslintrc": "^3.2.0",
-        "eslint-config-next": "^15.1.7",
-        "eslint-config-prettier": "^10.0.1",
-        "prettier-plugin-tailwindcss": "^0.6.11",
-        "@types/node": "22.13.4",
-        "@types/react": "19.0.9",
-        "@types/react-dom": "19.0.3",
-        "@typescript-eslint/eslint-plugin": "^8.24.0"
-    }
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "start": "next start",
+    "seed": "node -r dotenv/config ./scripts/seed.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/postcss": "^4.0.6",
+    "bcryptjs": "^3.0.0",
+    "clsx": "^2.1.1",
+    "glob": "^11.0.1",
+    "next": "15.2.0-canary.63",
+    "next-auth": "5.0.0-beta.25",
+    "postcss": "8.5.2",
+    "postgres": "^3.4.5",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "4.0.6",
+    "typescript": "5.7.3",
+    "use-debounce": "^10.0.4",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@next/eslint-plugin-next": "^15.1.7",
+    "@types/node": "22.13.4",
+    "@types/react": "19.0.9",
+    "@types/react-dom": "19.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "eslint-config-next": "^15.1.7",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  }
 }

@@ -1,3 +1,4 @@
+import pluginNext from '@next/eslint-plugin-next';
 import { FlatCompat } from '@eslint/eslintrc';
 // https://html-eslint.org/
 // npm install --save-dev eslint @html-eslint/parser @html-eslint/eslint-plugin eslint-config-prettier
@@ -29,6 +30,12 @@ const eslintConfig = [
     },
   }),
 
+  {
+    plugins: {
+      '@next/next': pluginNext,
+    },
+  },
+
   // lint CSS files
   // {
   //   files: ['**/*.css'],
@@ -43,6 +50,7 @@ const eslintConfig = [
     files: ['app/**/*.{js,mjs,cjs,jsx,tsx,ts}'],
 
     rules: {
+      ...pluginNext.configs.recommended.rules,
       'no-unexpected-multiline': 'off', // 关闭规则
       '@typescript-eslint/no-unused-vars': 'warn',
       // "react/react-in-jsx-scope": "off",
