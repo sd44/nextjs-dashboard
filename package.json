@@ -12,6 +12,7 @@
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.0.6",
     "axios": "^1.7.9",
+    "axios-jwt": "file:axios-jwt-4.0.3.tgz",
     "bcryptjs": "^3.0.0",
     "clsx": "^2.1.1",
     "glob": "^11.0.1",
