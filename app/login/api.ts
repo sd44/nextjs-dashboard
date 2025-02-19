@@ -50,13 +50,24 @@ interface ILoginRequest {
   password: string,
 }
 
+import {
+  getAccessToken,
+  applyAuthTokenInterceptor,
+  getRefreshToken,
+  getBrowserLocalStorage,
+} from 'axios-jwt';
+import { login, axiosInstance, requestRefresh } from './api';
 export const login = async (params: ILoginRequest) => {
+
+  applyAuthTokenInterceptor(axiosInstance, {
+    requestRefresh,  // async function that takes a refreshToken and returns a promise the resolves in a fresh accessToken
+  })
   const response = await axiosInstance.post(TOKEN_PAIR_URL, params)
 
   console.log(response.data.access)
   console.log(response.data.refresh)
   // save tokens to storage
-  setAuthTokens({
+  await setAuthTokens({
     accessToken: response.data.access,
     refreshToken: response.data.refresh
   })
@@ -64,3 +75,17 @@ export const login = async (params: ILoginRequest) => {
 
 // 5. Remove the auth tokens from storage
 export const logout = async () => await clearAuthTokens()
+
+
+  applyAuthTokenInterceptor(axiosInstance, {
+    requestRefresh,  // async function that takes a refreshToken and returns a promise the resolves in a fresh accessToken
+    tokenExpireFudge: 10,
+    getStorage:getBrowserLocalStorage
+  })
+  await login({ email: '25931014@qq.com', password: 'whopawho' });
+
+  const accessToken = await getAccessToken();
+  console.log(accessToken);
+
+  const refreshToken= await getRefreshToken();
+  console.log(refreshToken);

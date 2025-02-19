@@ -1,24 +1,8 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import LoginForm from '@/app/ui/login-form';
-import {
-  getAccessToken,
-  applyAuthTokenInterceptor,
-  getBrowserLocalStorage,
-  getRefreshToken,
-} from 'axios-jwt';
-import { login, axiosInstance, requestRefresh } from './api';
+
 
 export default async function LoginPage() {
-  applyAuthTokenInterceptor(axiosInstance, { requestRefresh });
-
-  await login({ email: '25931014@qq.com', password: 'whopawho' });
-
-  const accessToken = await getAccessToken();
-  console.log(accessToken);
-
-  const refreshToken = await getRefreshToken();
-  console.log(refreshToken);
-
   return (
     <main className="flex items-center justify-center md:h-screen">
       <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-4 md:-mt-32">
