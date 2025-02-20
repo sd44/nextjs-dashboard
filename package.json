@@ -15,6 +15,7 @@
     "axios-jwt": "^4.0.3",
     "bcryptjs": "^3.0.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
     "glob": "^11.0.1",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
