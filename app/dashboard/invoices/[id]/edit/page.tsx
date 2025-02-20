@@ -11,8 +11,8 @@ import { notFound } from 'next/navigation';
 
 /* https://nextjs.org/docs/messages/sync-dynamic-apis */
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { id } = await params;
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const { id } = await props.params;
   const [invoice, customers] = await Promise.all([
     fetchInvoiceById(id),
     fetchCustomers(),

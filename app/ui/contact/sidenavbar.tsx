@@ -46,11 +46,11 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Example({ children }: { children: ReactNode }) {
+export default function Example({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   /* TODO: 参考Nextjs Dashboard。但还未确定我的tailwindcss模板是否已支持这种状态
   操作。 */
