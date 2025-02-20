@@ -18,18 +18,24 @@ interface CombineJWTtoken {
   refresh: NinjaJwtPayload;
 }
 
+interface NinjaJWTPair {
+  email: string,
+  refresh: string,
+  access: string,
+}
+
 // Function to get JWT token from server
-async function getTokenFromServer(username: string, password: string): Promise<CombineJWTtoken> {
+async function getTokenFromServer(email: string, password: string): Promise<CombineJWTtoken> {
   const client_time = new Date().getTime();
   try {
     const response = await axios.post('/api/login', {
       // Replace '/api/login' with your actual login endpoint
-      username: username,
-      password: password,
+      email,
+      password,
     });
 
     if (response.status === 200) {
-      const token = response.data.token; // Assuming the token is returned in the 'token' field of the response data
+      const token: NinjaJWTPair = response.data;
       const access = jwtDecode<NinjaJwtPayload>(jwtDecode(token.access));
       const refresh = jwtDecode<NinjaJwtPayload>(jwtDecode(token.refresh));
       const tokenDecode: CombineJWTtoken = {
