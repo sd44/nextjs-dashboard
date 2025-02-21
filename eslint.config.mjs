@@ -53,6 +53,7 @@ const eslintConfig = [
       ...pluginNext.configs.recommended.rules,
       'no-unexpected-multiline': 'off', // 关闭规则
       '@typescript-eslint/no-unused-vars': 'warn',
+      'require-await': 'warn', // 或 "error"
       // "react/react-in-jsx-scope": "off",
       // "react/jsx-uses-react": "off",
     },

@@ -17,24 +17,25 @@ import {
 import {
   Bars3Icon,
   BellIcon,
-  CalendarIcon,
   ChartPieIcon,
   Cog6ToothIcon,
   DocumentDuplicateIcon,
-  FolderIcon,
   HomeIcon,
   UsersIcon,
   XMarkIcon,
+  RectangleStackIcon,
+  PencilSquareIcon,
+  ArrowsPointingOutIcon
 } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 
 const navigation = [
-  { name: 'Dashboard', href: '/contact', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+  { name: '首页', href: '/contact', icon: HomeIcon, current: true },
+  { name: '企业信息', href: '#', icon: RectangleStackIcon, current: false },
+  { name: '走访记录', href: '#', icon: PencilSquareIcon, current: false },
+  { name: '建设中.', href: '#', icon: ArrowsPointingOutIcon, current: false },
+  { name: '建设中..', href: '#', icon: DocumentDuplicateIcon, current: false },
+  { name: '建设中...', href: '#', icon: ChartPieIcon, current: false },
 ];
 const teams = [
   { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
@@ -158,7 +159,7 @@ export default function Example({ children }: { children: React.ReactNode }) {
                           aria-hidden="true"
                           className="size-6 shrink-0 text-indigo-200 group-hover:text-white"
                         />
-                        Settings
+                        设置
                       </Link>
                     </li>
                   </ul>
@@ -241,7 +242,7 @@ export default function Example({ children }: { children: React.ReactNode }) {
                       aria-hidden="true"
                       className="size-6 shrink-0 text-indigo-200 group-hover:text-white"
                     />
-                    Settings
+                    设置
                   </Link>
                 </li>
               </ul>

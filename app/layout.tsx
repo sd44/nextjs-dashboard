@@ -1,6 +1,7 @@
 import "@/app/ui/global.css";
 import { lusitana, noto_sans_sc } from "@/app/ui/fonts";
 import { Metadata } from 'next';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 export const metadata: Metadata = {
   title: {
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body
         className={`${lusitana.className} ${noto_sans_sc.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
       >
-        {children}
+        <AntdRegistry>
+          {children}
+        </AntdRegistry>
       </body>
     </html>
   );
