@@ -115,6 +115,7 @@ export async function getRefreshToken(
 
     const response = await fetch(refreshEndpointUrl, {
       method: 'post',
+      headers: { 'access':'dont need'},
       body: JSON.stringify({ refresh: currentToken }), // 将对象转换为 JSON 字符串
     });
 
