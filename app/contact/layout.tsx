@@ -1,6 +1,6 @@
 import SideNavBar from '@/app/ui/contact/sidenavbar';
 
-export const experimental_ppr = true;
+/* export const experimental_ppr = true; */
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 
