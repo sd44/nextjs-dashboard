@@ -4,7 +4,6 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "seed": "node -r dotenv/config ./scripts/seed.js",
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -50,5 +49,10 @@
     "jest-environment-jsdom": "^29.7.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "ts-node": "^10.9.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "bufferutil"
+    ]
   }
 }

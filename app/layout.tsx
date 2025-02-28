@@ -1,5 +1,5 @@
 import "@/app/ui/global.css";
-import { lusitana, noto_sans_sc } from "@/app/ui/fonts";
+import { inter, noto_sans_sc } from "@/app/ui/fonts";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`${lusitana.className} ${noto_sans_sc.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
+        className={`${inter.className} ${noto_sans_sc.className} antialiased text-xl text-gray-800 md:text-3xl md:leading-normal`}
       >
         {children}
       </body>
