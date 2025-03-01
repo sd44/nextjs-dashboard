@@ -3,6 +3,10 @@ import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
 import { notFound } from 'next/navigation';
 
+export const metadata: Metadata = {
+  title: 'Edit Invoice',
+};
+
 /* 动态 API 包括：
 *
 * 提供给页面、布局、元数据 API 和路由处理程序的 and props。paramssearchParams
