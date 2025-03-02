@@ -1,5 +1,7 @@
 import "@/app/ui/global.css";
 import { inter, noto_sans_sc } from "@/app/ui/fonts";
+import '@ant-design/v5-patch-for-react-19';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -21,7 +23,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${noto_sans_sc.className} antialiased text-xl text-gray-800 md:text-3xl md:leading-normal`}
       >
+      <AntdRegistry>
         {children}
+      </AntdRegistry>
       </body>
     </html>
   );
